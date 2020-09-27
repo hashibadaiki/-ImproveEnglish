@@ -1,6 +1,7 @@
-# emotion(React.js)
+[翻訳元](https://emotion.sh/docs/introduction
+)
 
-https://emotion.sh/docs/introduction
+# emotion introduction
 
 エモーションは CSS を JS で書く為のライブラリです。
 要は素晴らしい製品ですっていうことを書いている。

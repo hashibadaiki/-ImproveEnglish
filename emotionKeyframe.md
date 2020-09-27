@@ -1,6 +1,6 @@
-# emotionのkeyfameについて
+[翻訳元](https://emotion.sh/docs/keyframes)
 
-https://emotion.sh/docs/keyframes
+# emotionのkeyfameについて
 
 @ emotion / coreのkeyframesヘルパーを使用してアニメーションを定義できます。
 

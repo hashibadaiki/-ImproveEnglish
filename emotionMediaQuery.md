@@ -1,6 +1,7 @@
-# emotion mediaQuery
+[翻訳元](https://emotion.sh/docs/media-queries
+)
 
-https://emotion.sh/docs/media-queries
+# emotion mediaQuery
 
 emotion のメディアクエリアは通常の CSS と似た書き方をします。
 例えば ↓ みたいな感じ

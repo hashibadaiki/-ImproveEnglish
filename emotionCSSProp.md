@@ -1,9 +1,11 @@
-https://styled-components.com/docs/api
+[スタイルドコンポーネントについて](https://styled-components.com/docs/api)
+
 これはスタイルドコンポーネントのドキュメントみたい。
 スタイルドコンポーネントはタグと同期できるけど、それが課題
 修正時に時間がかかる
 
-https://emotion.sh/docs/css-prop
+[翻訳元](https://emotion.sh/docs/css-prop)
+
 emotion core の公式ドキュメント
 こっちをメインで翻訳
 
@@ -43,9 +45,6 @@ css プロップを使用するソースファイルの先頭に jsx プラグ�
 
 className プロップを受け入れるコンポーネントや要素は、css プロップを使用することもできます。css プロップに与えられたスタイルが評価され、計算されたクラス名が className プロップに適用されます。
 
-CSS の書き方について
-https://emotion.sh/docs/object-styles
-
 ### 文字列スタイル
 
 文字列スタイルを渡すには、@ emotion / core によってエクスポートされる css を使用する必要があります。これは、以下のようなタグ付きテンプレートリテラルとして使用できます
@@ -81,5 +80,6 @@ CSS 仕様の「外観の順序」ルールに依存して、後で定義され�
 
 ### Gotchas??(了解といった意味)
 
-.babelrc にプラグイン`babel-plugin-transform-react-inline-elements`
+.babelrc にプラグイン
+`babel-plugin-transform-react-inline-elements`
 を含めると、スタイルは適用されません。プラグインは css プロップと互換性がありません。
