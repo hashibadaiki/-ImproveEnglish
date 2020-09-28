@@ -1,5 +1,4 @@
-[翻訳元](https://emotion.sh/docs/media-queries
-)
+[翻訳元](https://emotion.sh/docs/media-queries)
 
 # emotion mediaQuery
 
@@ -23,6 +22,16 @@ render(
   </p>
 );
 ```
+
+## 結論(このページから自分の感じたこと)
+
+facepaint を使うと楽そう。
+
+object styled であれば使える
+
+object styled が何か？は調べに行く
+
+→ おそらく書き方の 1 つ。色んな書き方が可能
 
 ## 再利用可能なメディアクエリ
 

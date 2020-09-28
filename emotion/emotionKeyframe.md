@@ -1,16 +1,20 @@
 [翻訳元](https://emotion.sh/docs/keyframes)
 
-# emotionのkeyfameについて
+# emotion の keyfame について
 
-@ emotion / coreのkeyframesヘルパーを使用してアニメーションを定義できます。
+@ emotion / core の keyframes ヘルパーを使用してアニメーションを定義できます。
 
-keyframesは、cssキーフレーム定義を受け取り、スタイルで使用できるオブジェクトを返します。 cssと同じように文字列またはオブジェクトを使用できます。
+keyframes は、css キーフレーム定義を受け取り、スタイルで使用できるオブジェクトを返します。 css と同じように文字列またはオブジェクトを使用できます。
 
-つまり、cssに埋め込むオブジェクトを作成できる。
+つまり、css に埋め込むオブジェクトを作成できる。
+
+## 結論(このページから自分の感じたこと)
+
+keyframe こんな風に使うんやでって話
 
 ```js
 /** @jsx jsx */
-import { jsx, css, keyframes } from '@emotion/core'
+import { jsx, css, keyframes } from "@emotion/core";
 
 const bounce = keyframes`
   from, 20%, 53%, 80%, to {
@@ -28,7 +32,7 @@ const bounce = keyframes`
   90% {
     transform: translate3d(0,-4px,0);
   }
-`
+`;
 
 render(
   <div
@@ -38,5 +42,5 @@ render(
   >
     some bouncing text!
   </div>
-)
+);
 ```
