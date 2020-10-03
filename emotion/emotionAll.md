@@ -26,3 +26,19 @@ const pinkInput = css`
 `;
 ```
 おそらくこの書き方のことを言っている
+
+## Theming
+
+[翻訳元](https://emotion.sh/docs/theming)
+
+テーマ
+
+テーマはemotionのテーマによって提供されます
+
+ThemeProviderをアプリのトップレベルに追加し、スタイル付きコンポーネントのprops.themeを使用してテーマにアクセスするか、テーマをcsspropとして受け入れる関数を提供します。 
+
+APIは、ドキュメントに詳細に記載されています。
+
+つまり、これはざっくり書くとテーマっていうパッケージの説明。
+
+cssPROP/styled/hookの3種類で使えるって話
