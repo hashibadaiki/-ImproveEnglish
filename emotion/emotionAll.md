@@ -42,3 +42,23 @@ APIは、ドキュメントに詳細に記載されています。
 つまり、これはざっくり書くとテーマっていうパッケージの説明。
 
 cssPROP/styled/hookの3種類で使えるって話
+
+
+## Labels
+
+[翻訳元](https://emotion.sh/docs/labels)
+
+babel-plugin-emotion は変数名やその他の情報に基づいて自動的にラベルを追加するので、手動で指定する必要はありません。
+
+ハッシュ値を使ってラベリングしている模様
+
+## CacheProvider
+
+ [翻訳元](https://emotion.sh/docs/cache-provider)
+
+例えば、カスタムStylisプラグインの追加、挿入されるクラス名の接頭辞のカスタマイズ、特定の要素にスタイルタグをレンダリングするなど、エモーションのオプションをカスタマイズするのに便利です。
+
+`import createCache from '@emotion/cache'
+`
+
+これを宣言して様々なoptionをつけられるという認識
