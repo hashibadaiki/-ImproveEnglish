@@ -24,7 +24,7 @@
 
 ## Version Control
 
-## Web Security Knoeledge
+## Web Security Knowledge
 Webのセキュリティに関する知識
 
 ## Package Managers
@@ -37,11 +37,39 @@ Webのセキュリティに関する知識
 
 ## Build Tools
 
-## Framework
+## Framework(Library)
 
 ## Modern CSS
 
 ## Web Components
 [Web Components](https://developer.mozilla.org/ja/docs/Web/Web_Components)
 
-# CSSフレームワークまで。真ん中ら辺
+## CSS Framework
+
+## Test App
+
+## Type Checker
+
+## Progressive Web App
+Webサイトをスマホアプリのようにダウンロードできる技術
+
+[PWA](https://developer.mozilla.org/ja/docs/Web/Progressive_web_apps)
+
+## SSR
+
+## GraphQL
+
+## SSG
+
+## Mobile App
+
+## Desktop App
+
+## Web Assembly
+
+- JSは様々な対応ができるが、それだけでは3Dなどに対応できない
+- その足りない部分を低水準言語(C++/Rust等)で補う
+- Web Assembly自体は仕様が未確定の部分が多い
+
+
+[Web Assembly](https://developer.mozilla.org/ja/docs/WebAssembly/Concepts)
