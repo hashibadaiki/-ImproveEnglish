@@ -14,58 +14,92 @@
 - <font color="Blue">青色</font>…今やらなくてもいい
 - <font color="Red">赤色</font>…おすすめしない
 
-## Internet
+## 1.Internet
 
-## HTML
+1-1.インターネットの仕組み
 
-## CSS
+1-2.ブラウザとその仕組み
 
-## JavaScript
+1-3.DNSとその仕組み
 
-## Version Control
+1-4.HTTPってなに？
 
-## Web Security Knowledge
+1-5.ドメインってなに？
+
+1-6.ホスティングってなに？
+
+## 2.HTML
+
+2-1.基礎を学ぶ
+
+2-2.フォームとバリデーション
+
+2-3.convensionsとベストプラックティス
+
+[ベストプラックティス](https://github.com/hail2u/html-best-practices/blob/master/README.ja.md)
+
+ようは良い慣例みたいな意味。
+
+2-4.セマンティックなHTML
+
+2-5.SEO
+
+2-6.アクセシビリティ
+
+## 3.CSS
+
+3-1.基礎を学ぶ
+
+3-2.レイアウト(flex/Grid)
+
+3-3.レスポンシブ
+
+## 4.JavaScript
+
+## 5.Version Control
+
+## 6.Web Security Knowledge
 Webのセキュリティに関する知識
 
-## Package Managers
+## 7.Package Managers
 
-## CSS Architecture
+## 8.CSS Architecture
 命名規則
 
-## CSS Preprocessors
+## 9.CSS Preprocessors
 [CSSプリプロセッサー](https://developer.mozilla.org/ja/docs/Glossary/CSS_preprocessor)
 
-## Build Tools
+## 10.Build Tools
 
-## Framework(Library)
+## 11.Framework(Library)
 
-## Modern CSS
+## 12.Modern CSS
 
-## Web Components
+## 13.Web Components
 [Web Components](https://developer.mozilla.org/ja/docs/Web/Web_Components)
 
-## CSS Framework
+## 14.CSS Framework
 
-## Test App
+## 15.Test App
 
-## Type Checker
+## 16.Type Checker
 
-## Progressive Web App
+## 17.Progressive Web App
 Webサイトをスマホアプリのようにダウンロードできる技術
 
 [PWA](https://developer.mozilla.org/ja/docs/Web/Progressive_web_apps)
 
-## SSR
+## 18.SSR
 
-## GraphQL
+## 19.GraphQL
 
-## SSG
+## 20.SSG
 
-## Mobile App
+## 21.Mobile App
 
-## Desktop App
+## 22.Desktop App
 
-## Web Assembly
+## 23.Web Assembly
 
 - JSは様々な対応ができるが、それだけでは3Dなどに対応できない
 - その足りない部分を低水準言語(C++/Rust等)で補う
