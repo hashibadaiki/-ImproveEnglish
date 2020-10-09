@@ -1,4 +1,4 @@
-# fronte developer RM
+# Frontend Developer RoadMap
 
 [翻訳元](https://roadmap.sh/frontend)
 
@@ -50,18 +50,67 @@
 
 3-1.基礎を学ぶ
 
-3-2.レイアウト(flex/Grid)
+3-2.レイアウト(flex/Gridなどなど)
 
 3-3.レスポンシブ
 
 ## 4.JavaScript
 
+4-1.基本的な構文
+
+4-2.DOMの操作方法
+
+4-3.API取得/Ajax
+
+4-4.ES6/JSモジュール
+
+[JS モジュール](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)
+
+4-5.ホスティング、イベントバンドラー、スコープ、プロトタイプ、Shadow DOM、strictのコンセプトを理解する
+
 ## 5.Version Control
+
+5-1.Git
+
+5-2.GitHub
 
 ## 6.Web Security Knowledge
 Webのセキュリティに関する知識
 
+6-1.HTTPS
+
+[HTTPS/MDN](https://developer.mozilla.org/ja/docs/Glossary/https)
+
+6-2.CORS
+
+Webアプリから別のWebサーバーへのアクセスを、許可できる仕組み。
+
+[CORS/MDN](https://developer.mozilla.org/ja/docs/Glossary/CORS)
+
+[CORS/Qiita](https://qiita.com/att55/items/2154a8aad8bf1409db2b)
+
+6-3.コンテンツセキュリティポリシー (CSP)
+
+特定の攻撃を検知し、影響を軽減できるセキュリティレイヤー。
+
+Webサーバーでの設定や、<meta>タグ内などで設定可能
+
+[CSP](https://developer.mozilla.org/ja/docs/Web/HTTP/CSP)
+
+6-4.OWASP security risks
+
+OWASPという組織が毎年更新している、セキュリティの注意喚起。
+
+[OWASP Japan](https://owasp.org/www-chapter-japan/)
+
+
 ## 7.Package Managers
+
+どちらか1つを選んでも、両方学んでも大差はありません。
+
+7-1.npm
+
+7-2.yarn
 
 ## 8.CSS Architecture
 命名規則
