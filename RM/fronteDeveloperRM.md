@@ -115,7 +115,7 @@ OWASPという組織が毎年更新している、セキュリティの注意喚
 ## 8.CSS Architecture
 命名規則
 
-最新のフレームワークやCSS-in-JSを使用するとこれらを心配しなくてもいいけど、BEMぐらいは知っておいていいと思うよ。
+最新のフレームワークやCSS-in-JSを使用するとこれらを「覚えなきゃ！」と心配しなくてもいいけど、BEMぐらいは知っておいていいと思うよ。
 
 8-1.BEM
 
@@ -125,6 +125,14 @@ OWASPという組織が毎年更新している、セキュリティの注意喚
 
 ## 9.CSS Preprocessors
 [CSSプリプロセッサー](https://developer.mozilla.org/ja/docs/Glossary/CSS_preprocessor)
+
+それほど必要ないものかもしれない。
+
+9-1.Sass
+
+9-2.PostCSS
+
+9-3.StandardJS
 
 ## 10.Build Tools
 
