@@ -79,7 +79,7 @@ Webのセキュリティに関する知識
 
 6-1.HTTPS
 
-[HTTPS/MDN](https://developer.mozilla.org/ja/docs/Glossary/https)
+[HTTPS](https://developer.mozilla.org/ja/docs/Glossary/https)
 
 6-2.CORS
 
@@ -126,15 +126,43 @@ OWASPという組織が毎年更新している、セキュリティの注意喚
 ## 9.CSS Preprocessors
 [CSSプリプロセッサー](https://developer.mozilla.org/ja/docs/Glossary/CSS_preprocessor)
 
-それほど必要ないものかもしれない。
+それほど必要ないものかもしれない。命名規則とにたレベル感で良い。
 
 9-1.Sass
 
 9-2.PostCSS
 
-9-3.StandardJS
+[PostCSSまとめ](https://qiita.com/morishitter/items/4a04eb144abf49f41d7d)
+
+9-3.Less
+
+[とほほのLess入門](http://www.tohoho-web.com/ex/less.html)
 
 ## 10.Build Tools
+
+使ってはいるけど内部構造などを把握していない
+
+### Task Runners
+
+10-1.npm script
+
+10-2.Gulp
+
+### Module Bundlers
+
+10-3.Webpack
+
+10-4.Rollup
+
+10-5.Parcel
+
+### Linters and Formatters
+
+10-6.Prettier
+
+10-7.ESLint
+
+10-8.StandardJS
 
 ## 11.Framework(Library)
 
@@ -142,6 +170,9 @@ OWASPという組織が毎年更新している、セキュリティの注意喚
 
 ## 13.Web Components
 [Web Components](https://developer.mozilla.org/ja/docs/Web/Web_Components)
+
+
+
 
 ## 14.CSS Framework
 
