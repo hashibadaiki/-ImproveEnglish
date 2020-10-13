@@ -166,13 +166,45 @@ OWASPという組織が毎年更新している、セキュリティの注意喚
 
 ## 11.Framework(Library)
 
+### React
+
+11-1.Redux
+
+11-2.MobX
+
+### Angular
+
+11-3.RxJS
+
+11-4.NgRx
+
+### Vue
+
+11-5.VueX
+
 ## 12.Modern CSS
 
+12-1.Styled Components
+
+12-2.CSS Modules
+
+12-3.Styled JSX
+
+12-4.Emotion
+
+12-5.Radium
+
+12-6.Glamorous
+
 ## 13.Web Components
+
 [Web Components](https://developer.mozilla.org/ja/docs/Web/Web_Components)
 
+13-1.HTML Templates
 
+13-2.Custom Elements
 
+13-3.Shadow DOM
 
 ## 14.CSS Framework
 
