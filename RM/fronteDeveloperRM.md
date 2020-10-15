@@ -228,6 +228,22 @@ JSベースで、フレームワークベースのJavaScriptアプリケーシ�
 
 ## 15.Test App
 
+ユニットテスト、インテグレーションテスト、機能テストの違いを学び、下記のツールを使ってテストの書き方を学びます。
+
+15-1.Jest
+
+15-2.react-testing-library
+
+15-3.Cypress
+
+15-4.Enzyme
+
+これだけですべてのテストのニーズを満たすことができます。
+
+15-5.その他
+
+Mocha/Chai/Ava/Jamine
+
 ## 16.Type Checker
 
 ## 17.Progressive Web App
