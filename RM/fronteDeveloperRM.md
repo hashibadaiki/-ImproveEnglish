@@ -244,12 +244,46 @@ JSベースで、フレームワークベースのJavaScriptアプリケーシ�
 
 Mocha/Chai/Ava/Jamine
 
-## 16.Type Checker
+## 16.Type Checkers
+
+16-1.TypeScript
+
+16-2.Flow
 
 ## 17.Progressive Web App
 Webサイトをスマホアプリのようにダウンロードできる技術
 
 [PWA](https://developer.mozilla.org/ja/docs/Web/Progressive_web_apps)
+
+PWAで使用されるさまざまなWeb APIを学ぶ
+
+17-1.Storage
+
+17-2.Wb Sockets
+
+17-3.Service Workers
+
+17-4.Location
+
+17-5.Notificaitons
+
+17-6.Device Orientation
+
+17-7.Payments
+
+17-8.Credentials
+
+計算し、測定し、パフォーマンスを向上させる
+
+17-9.PRPL Pattern
+
+17-10.RAIL Model
+
+17-11.Performance Metrics
+
+17-12.Using Lighthouse
+
+17-13.Using DevTools
 
 ## 18.SSR
 
