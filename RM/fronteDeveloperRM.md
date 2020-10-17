@@ -287,7 +287,27 @@ PWAで使用されるさまざまなWeb APIを学ぶ
 
 ## 18.SSR
 
+### React
+
+18-1.Next
+
+18-2.After
+
+### Angular
+
+18-3.Universal
+
+### Vue
+
+18-4.Nuxt
+
 ## 19.GraphQL
+
+RESTful Web API（REST）の持つ問題を解決するために開発された規格です。
+
+19-1.Apollo
+
+19-2.Relay Modern
 
 ## 20.SSG
 
