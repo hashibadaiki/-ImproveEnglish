@@ -306,15 +306,48 @@ RESTful Web API（REST）の持つ問題を解決するために開発された�
 
 ## 20.SSG
 
+20-1.Next.js
+
+20-2.GatsbyJS
+
+20-3.Nuxt.js
+
+20-4.Vuepress
+
+20-5.Jekyll
+
+20-6.Hugo
+
 ## 21.Mobile App
+
+21-1.React Native
+
+21-2.NativeScript
+
+21-3.Flutter
+
+21-4.Ionic
 
 ## 22.Desktop App
 
+22-1.Electron
+
+22-2.Cario
+
+22-3.Proton Native
+
 ## 23.Web Assembly
+
+(Web Assembly === WASM)
 
 - JSは様々な対応ができるが、それだけでは3Dなどに対応できない
 - その足りない部分を低水準言語(C++/Rust等)で補う
 - Web Assembly自体は仕様が未確定の部分が多い
 
-
 [Web Assembly](https://developer.mozilla.org/ja/docs/WebAssembly/Concepts)
+
+ウェブアセンブリまたはWASMは、Go、C、C++、Rustなどの上位言語から生成されたバイナリ命令です。
+
+これは、Javascriptよりも早く、WASM 1,0はすでに主要なブラウザで出荷されています。
+
+W3Cは2019年末に公式規格として受け入れました。しかし、主流になるにはまだかなりの時間がかかるでしょう。
