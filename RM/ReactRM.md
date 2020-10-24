@@ -10,7 +10,8 @@
 ### 気になる単語たち
  
  - 関数型とクラス型は何がどう違う？
-   - 
+   - http://cristo.top/ja/how-are-function-components-different-from-classes/
+   - thisが可変なので、その点が違う
  - CRAって何してるの？何これ？
   - 
  - Conditional Renderingって？
