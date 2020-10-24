@@ -48,12 +48,12 @@
 }
  ```
 
-- Use selectorName_fallback for sets of fallback styles.こっから
+- フォールバックスタイルのセットにはselectorName_fallbackを使用します。
+  - 修飾子と同様に、名前を一貫性のあるものにしておくと、より適切なブラウザでこれらのスタイルを上書きするスタイルとの関係を明らかにするのに役立ちます。
  
- 
- 
- 
- 
+fallbackが少し難しい。
+
+使う時は↑のやり方という認識で。
  
  
  
