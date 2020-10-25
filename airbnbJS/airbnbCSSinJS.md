@@ -55,18 +55,96 @@ fallbackが少し難しい。
 
 使う時は↑のやり方という認識で。
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+- フォールバックスタイルのセットには、別のセレクタを使用します。
 
-## Ordering
+  - フォールバックスタイルを別のオブジェクトに含めることで、その目的が明確になり、可読性が向上します。 
+ 
+ ```js
+// bad
+{
+  muscles: {
+    display: 'flex',
+  },
+  left: {
+    flexGrow: 1,
+    display: 'inline-block',
+  },
+  right: {
+    display: 'inline-block',
+  },
+}
+// good
+{
+  muscles: {
+    display: 'flex',
+  },
+  left: {
+    flexGrow: 1,
+  },
+  left_fallback: {
+    display: 'inline-block',
+  },
+  right_fallback: {
+    display: 'inline-block',
+  },
+}
+ ```
+
+- メディアクエリのブレークポイントの名前には、デバイスに依存しない名前（例："small"、"medium"、"large"）を使用してください。
+
+  - 「phone」、「tablet」、「desktop」のような一般的に使用されている名前は、現実世界のデバイスの特性と一致しません。これらの名前を使用すると、間違った期待を抱かせてしまいます。
+ 
+ ```js
+ // bad
+const breakpoints = {
+  mobile: '@media (max-width: 639px)',
+  tablet: '@media (max-width: 1047px)',
+  desktop: '@media (min-width: 1048px)',
+};
+// good
+const breakpoints = {
+  small: '@media (max-width: 639px)',
+  medium: '@media (max-width: 1047px)',
+  large: '@media (min-width: 1048px)',
+};
+ ```
+ 
+## Ordering(順序)
+
+- コンポーネントの後にスタイルを定義します。 
+  - 高次のコンポーネントを使用してスタイルにテーマを設定します。これは、コンポーネントの定義後に自然に使用されます。スタイルオブジェクトをこの関数に直接渡すと、間接参照が減ります。
+
+  ```js
+  // bad
+const styles = {
+  container: {
+    display: 'inline-block',
+  },
+};
+function MyComponent({ styles }) {
+  return (
+    <div {...css(styles.container)}>
+      Never doubt that a small group of thoughtful, committed citizens can
+      change the world. Indeed, it’s the only thing that ever has.
+    </div>
+  );
+}
+export default withStyles(() => styles)(MyComponent);
+// good
+function MyComponent({ styles }) {
+  return (
+    <div {...css(styles.container)}>
+      Never doubt that a small group of thoughtful, committed citizens can
+      change the world. Indeed, it’s the only thing that ever has.
+    </div>
+  );
+}
+export default withStyles(() => ({
+  container: {
+    display: 'inline-block',
+  },
+}))(MyComponent);
+  ```
 
 
 ## Nesting
