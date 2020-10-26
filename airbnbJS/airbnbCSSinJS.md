@@ -149,6 +149,39 @@ export default withStyles(() => ({
 
 ## Nesting
 
+- 同じインデントレベルで隣接するブロック間に空白の線を残します。
+
+  - 空白にすることで可読性が向上し、マージ時の競合の可能性が減ります。
+
+```js
+// bad
+{
+  bigBang: {
+    display: 'inline-block',
+    '::before': {
+      content: "''",
+    },
+  },
+  universe: {
+    border: 'none',
+  },
+}
+
+// good
+{
+  bigBang: {
+    display: 'inline-block',
+
+    '::before': {
+      content: "''",
+    },
+  },
+
+  universe: {
+    border: 'none',
+  },
+}
+```
 
 ## Inline
 
