@@ -185,5 +185,49 @@ export default withStyles(() => ({
 
 ## Inline
 
+- カーディナリティの高いスタイル (例: プロップの値を使用する) にはインラインスタイルを使用し、カーディナリティの低いスタイルには使用しないようにしてください。
+
+  - テーマのあるスタイルシートを生成するのはコストがかかるので、個別のスタイルセットに最適です。
+
+```js
+// bad
+export default function MyComponent({ spacing }) {
+  return (
+    <div style={{ display: 'table', margin: spacing }} />
+  );
+}
+
+// good
+function MyComponent({ styles, spacing }) {
+  return (
+    <div {...css(styles.periodic, { margin: spacing })} />
+  );
+}
+export default withStyles(() => ({
+  periodic: {
+    display: 'table',
+  },
+}))(MyComponent);
+```
 
 ## Themes
+
+- react-with-styles のような、テーマ設定を可能にする抽象化レイヤーを使用します。 react-with-styles は withStyles()、ThemedStyleSheet、css() のようなものを提供してくれます。
+  - コンポーネントのスタイリングのために共有変数のセットを持っていると便利です。抽象化レイヤーを使用することで、より便利になります。さらに、これはコンポーネントが特定の基礎となる実装に固く結合されるのを防ぐのに役立ち、より自由度が高まります。
+
+  フォントやカラーは変数から使用しましょうねって話。
+  
+  ```js
+  // bad
+export default withStyles(() => ({
+  chuckNorris: {
+    color: '#bada55',
+  },
+}))(MyComponent);
+// good
+export default withStyles(({ color }) => ({
+  chuckNorris: {
+    color: color.badass,
+  },
+}))(MyComponent);
+  ```
