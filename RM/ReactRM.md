@@ -36,7 +36,7 @@
    - 
  - RactNativeで何か簡易アプリを実装する
    - 
- - Fromについて理解する
+ - Formについて理解する
    - 
  - Testを使用する。Reactで
    - 
