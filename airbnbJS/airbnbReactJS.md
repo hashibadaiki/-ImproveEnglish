@@ -61,6 +61,41 @@ Mixinsは使わないでね＾＾（廃れた技術なので）
 
 ## Naming
 
+- このESlintを使いましょう
+`react/jsx-filename-extension`
+- ファイル名はパスカルケースで
+- ReactのコンポーネントにはPascalCaseを、そのインスタンスにはcamelCaseを使います。
+
+- コンポーネント名としてファイル名を使用します。例えば、ReservationCard.jsxはReservationCardという参照名を持つ必要があります。ただし、ディレクトリのルートコンポーネントの場合は、index.jsxをファイル名として使用し、ディレクトリ名をコンポーネント名として使用します。
+
+```js
+// bad
+import Footer from './Footer/Footer';
+
+// bad
+import Footer from './Footer/index';
+
+// good
+import Footer from './Footer';
+```
+
+- 高次のコンポーネントの名前と、渡されたコンポーネントの名前を合成したものを、生成されたコンポーネントのdisplayNameとして使用します。例えば、高次のコンポーネント withFoo() は、コンポーネント Bar を渡すと、withFoo(Bar) の displayName を持つコンポーネントを生成しなければなりません。
+  - コンポーネントの displayName は、開発者ツールやエラーメッセージで使用される可能性があり、この関係を明確に表現する値を持つことで、何が起こっているのかを理解するのに役立ちます。
+
+- DOM コンポーネントのプロップ名を目的別に使うのは避けましょう。
+  - 人々は style や className のようなプロップが特定の意味を持つことを期待しています。アプリのサブセットに対してこの API を変化させると、コードの可読性やメンテナンス性が低下し、バグが発生する可能性があります。
+
+```js
+// bad
+<MyComponent style="fancy" />
+
+// bad
+<MyComponent className="fancy" />
+
+// good
+<MyComponent variant="fancy" />
+```
+
 ## Declaration
 
 ## Alignment
