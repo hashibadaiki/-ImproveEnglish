@@ -98,6 +98,8 @@ import Footer from './Footer';
 
 ## Declaration
 
+displayNameは使わないで！
+
 ## Alignment
 
 ## Quotes
