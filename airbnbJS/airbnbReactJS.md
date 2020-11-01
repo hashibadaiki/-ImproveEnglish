@@ -100,7 +100,25 @@ import Footer from './Footer';
 
 displayNameは使わないで！
 
-## Alignment
+## Alignment(配置)
+
+`react/jsx-closing-bracket-location` `react/jsx-closing-tag-location`
+
+このどちらかのlint使ってね
+
+```js
+// bad
+<Foo superLongParam="bar"
+     anotherSuperLongParam="baz" />
+
+// good
+<Foo
+  superLongParam="bar"
+  anotherSuperLongParam="baz"
+/>
+```
+
+まぁようは見易く書いてって話
 
 ## Quotes
 
