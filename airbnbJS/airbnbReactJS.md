@@ -127,7 +127,11 @@ displayNameは使わないで！
 
 ## Spacing
 
+spaceについて。基本的にはESlintに従ってね
+
 ## Props
+
+
 
 ## Refs
 
