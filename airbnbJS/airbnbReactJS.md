@@ -131,6 +131,14 @@ spaceについて。基本的にはESlintに従ってね
 
 ## Props
 
+- 基本的にpropsはキャメルケースです。React componentsの場合はパスカルケースでお願いします
+- trueの場合は明示的に書かないで
+- imageタグには必ずaltをつけてね。ない場合でも。プレゼンテーションの場合はrole="presentation"をつけて
+- image tagのaltにpiutureとかimgとかつけないで。見たら分かるでしょ！
+- アクセスキーをエレメントに使用しないで
+
+Avoid using an array index as key prop, prefer a stable ID. eslint: react/no-array-index-key
+こっから
 
 
 ## Refs
