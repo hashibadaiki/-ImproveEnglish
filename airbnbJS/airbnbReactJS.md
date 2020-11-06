@@ -136,12 +136,13 @@ spaceについて。基本的にはESlintに従ってね
 - imageタグには必ずaltをつけてね。ない場合でも。プレゼンテーションの場合はrole="presentation"をつけて
 - image tagのaltにpiutureとかimgとかつけないで。見たら分かるでしょ！
 - アクセスキーをエレメントに使用しないで
-
-Avoid using an array index as key prop, prefer a stable ID. eslint: react/no-array-index-key
-こっから
-
+- keyに安易にindexを使わない。IDで済む場合はIDで
+- 必須ではないすべてのpropsに対しては、常に明示的なdefaultPropsを定義してください。
+  - propTypesはドキュメントの一形態であり、defaultPropsを提供することは、コードを読む人が多くのことを想定する必要がないことを意味します。さらに、特定の型チェックを省略することもできます。
 
 ## Refs
+常にrefはcallbackで呼び出して下さい
+
 
 ## Parentheses
 
