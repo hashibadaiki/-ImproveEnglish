@@ -140,13 +140,34 @@ spaceについて。基本的にはESlintに従ってね
 - 必須ではないすべてのpropsに対しては、常に明示的なdefaultPropsを定義してください。
   - propTypesはドキュメントの一形態であり、defaultPropsを提供することは、コードを読む人が多くのことを想定する必要がないことを意味します。さらに、特定の型チェックを省略することもできます。
 
-## Refs
+## Refs(参照)
 常にrefはcallbackで呼び出して下さい
 
-
-## Parentheses
+## Parentheses(括弧)
+JSXは2行以上の場合は各個で括って下さい
 
 ## Tags
+- 子タグがない場合はわざわざ付けない
+- propsが複数行あるときは閉じタグは別にする
+
+```js
+// bad
+<Foo variant="stuff"></Foo>
+
+// good
+<Foo variant="stuff" />
+
+// bad
+<Foo
+  bar="bar"
+  baz="baz" />
+
+// good
+<Foo
+  bar="bar"
+  baz="baz"
+/>
+```
 
 ## Methods
 
