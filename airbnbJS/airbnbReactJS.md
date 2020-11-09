@@ -1,5 +1,9 @@
 [翻訳元](https://github.com/airbnb/javascript/tree/master/react#airbnb-reactjsx-style-guide)
 
+https://github.com/mitsuruog/javascript-style-guide/tree/master/react
+
+日本語訳あった…
+
 # Airbnb Reactガイド
 
 ## Basic Rules
@@ -178,3 +182,5 @@ JSXは2行以上の場合は各個で括って下さい
 ## Ordering
 
 ## isMounted
+
+使用しないで。公式非推奨
