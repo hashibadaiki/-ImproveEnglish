@@ -30,6 +30,8 @@ Blitzを初めて使用する場合は、初期設定から始める必要があ
 
 ```
 mysite
+// appは多くの場合container_dirです。
+//  pagesかAPIルーターが入っています。
 ├── app
 │   ├── components
 │   │   └── ErrorBoundary.tsx
@@ -38,16 +40,23 @@ mysite
 │       ├── _app.tsx
 │       ├── _document.tsx
 │       └── index.tsx
+// dbは、データベース構成が行われる場所です。
+// モデルを作成したり、migrationを確認したりする場合は、ここにアクセスしてください。
 ├── db
 │   ├── migrations
 │   ├── index.ts
 │   └── schema.prisma
+// 省略
 ├── integrations
+// 省略
 ├── node_modules
+// 静的なファイル置き場
 ├── public
 │   ├── favicon.ico
 │   └── logo.png
+// utilityなファイルの置き場
 ├── utils
+// 以下省略
 ├── .babelrc.js
 ├── .env
 ├── .eslintrc.js
@@ -59,5 +68,7 @@ mysite
 ├── package.json
 ├── tsconfig.json
 └── yarn.lock
+
+省略は他FWと大体同一
 ```
 
