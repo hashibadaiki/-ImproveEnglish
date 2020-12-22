@@ -84,4 +84,58 @@ CLに次の出力が表示されます。
 これでサーバーが動いています。local:3000に行ってみてください。blitzのロゴが出てるでしょ？！
 無事に動いてますね＾＾
 
+## 最初のページを書くで
 
+開発環境（「プロジェクト」）がセットアップされたので、アプリの構築を開始する準備が整いました。
+まず、最初のページを作成します。 ファイルapp / pages / index.tsxを開き、次のコードをその中に入れます。
+
+```js
+const Index = () => (
+  <div>
+    <h1>Hello, world!</h1>
+  </div>
+)
+export default Index
+```
+
+blitzで一番シンプルなページです。
+ブラウザに戻って、http://localhost:3000 を訪れてみたください。
+あなたのテキストが表示されるはずです。index.tsxファイルを編集してみてください。
+これが確認できたら、次のセクションに進みましょう。
+
+## コンテンツを生成する
+
+Blitzは、ボイラープレートコードをスキャフォールディングするためのgenerateと呼ばれる便利なコマンドを提供しています。
+
+ここでは、generateを使って2つのモデルを作成します。QuestionとChoiceです。
+質問には質問のテキストと選択肢のリストがあります。選択肢には、選択肢のテキスト、投票数、関連する質問があります。
+どちらのモデルも自動的にid、作成タイムスタンプ、最終更新タイムスタンプを持っています。
+
+最初に、質問モデルに関連するすべてのものを生成します。
+
+```js
+blitz generate all question text:string choices:choice[]
+✔ Model for 'question' created successfully:
+> model Question {
+>   id        Int      @default(autoincrement()) @id
+>   createdAt DateTime @default(now())
+>   updatedAt DateTime @updatedAt
+>   text      String
+>   choices   Choice[]
+> }
+Now run blitz db migrate to add this model to your database
+CREATE    app/questions/pages/questions/index.tsx
+CREATE    app/questions/pages/questions/new.tsx
+CREATE    app/questions/pages/questions/[questionId]/edit.tsx
+CREATE    app/questions/pages/questions/[questionId].tsx
+CREATE    app/questions/components/QuestionForm.tsx
+CREATE    app/questions/queries/getQuestions.ts
+CREATE    app/questions/queries/getQuestion.ts
+CREATE    app/questions/mutations/createQuestion.ts
+CREATE    app/questions/mutations/deleteQuestion.ts
+CREATE    app/questions/mutations/updateQuestion.ts
+```
+
+Then, we'll generate the Choice model with corresponding queries and mutations. We'll pass a type of resource this time as we don't n
+
+ここから
