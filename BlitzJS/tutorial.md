@@ -136,6 +136,39 @@ CREATE    app/questions/mutations/deleteQuestion.ts
 CREATE    app/questions/mutations/updateQuestion.ts
 ```
 
-Then, we'll generate the Choice model with corresponding queries and mutations. We'll pass a type of resource this time as we don't n
+次に、対応するクエリとミューテーションを使用してChoiceモデルを生成します。
+Choiceモデルのページを生成する必要がないため、今回はある種のリソースを渡します。
 
-ここから
+`blitz generate resource choice text votes:int:default[0] belongsTo:question
+`
+
+>注：端末でzshを使用する場合、正しく解釈されるように、フィールドをデフォルト値で引用符（ ""）で囲む必要があります。このように： "votes：int：default [0]"
+
+```
+✔ Model for 'choice' created successfully:
+> model Choice {
+>   id         Int      @default(autoincrement()) @id
+>   createdAt  DateTime @default(now())
+>   updatedAt  DateTime @updatedAt
+>   text       String
+>   votes      Int      @default(0)
+>   question   Question @relation(fields: [questionId], references: [id])
+>   questionId Int
+> }
+Now run blitz db migrate to add this model to your database
+CREATE    app/choices/queries/getChoices.ts
+CREATE    app/choices/queries/getChoice.ts
+CREATE    app/choices/mutations/createChoice.ts
+CREATE    app/choices/mutations/deleteChoice.ts
+CREATE    app/choices/mutations/updateChoice.ts
+```
+
+>注：変更が必要な場合でかつ、generate以外を使用する場合、必要に応じてdb /schema.prismaファイルを直接編集することもできます。
+
+
+次に、データベースを移行する必要があります。
+これは、スキーマを何らかの方法で編集したことを伝える方法です。
+以下のコマンドを実行します。移行名の入力を求められたら、任意の名前を入力できます（一般的には「init db」）
+
+`blitz db migrate`
+
