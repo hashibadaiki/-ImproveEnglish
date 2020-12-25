@@ -177,5 +177,10 @@ CREATE    app/choices/mutations/updateChoice.ts
 インタラクティブなblitz shellを使っていきましょう。
 blitz consoleを呼び出すのは `blitz console`でOK
 
- 
+consoleが表示されたらAPI叩いて遊んでみてね。
+
+## generate コンテンツの修正
+
+※アプリを再度実行する前に、生成されたコンテンツの一部をカスタマイズする必要があります。
+最終的には、これらの修正は必要ありませんが、今のところ、いくつかの未解決の問題を回避する必要があります。 
 
