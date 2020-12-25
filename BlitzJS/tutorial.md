@@ -172,3 +172,10 @@ CREATE    app/choices/mutations/updateChoice.ts
 
 `blitz db migrate`
 
+## APIを使ってみよう！
+
+インタラクティブなblitz shellを使っていきましょう。
+blitz consoleを呼び出すのは `blitz console`でOK
+
+ 
+
