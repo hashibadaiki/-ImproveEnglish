@@ -184,3 +184,23 @@ consoleが表示されたらAPI叩いて遊んでみてね。
 ※アプリを再度実行する前に、生成されたコンテンツの一部をカスタマイズする必要があります。
 最終的には、これらの修正は必要ありませんが、今のところ、いくつかの未解決の問題を回避する必要があります。 
 
+### deleteQuestion mutation
+
+Prismaはまだ「カスケード削除」をサポートしていません。
+このチュートリアルのコンテキストでは、現在のところ、質問を削除する際に選択肢データを削除しないことを意味します。
+これを手動で行うには、生成された deleteQuestion mutationを一時的に増強する必要があります。
+テキストエディタで app/questions/mutations/deleteQuestion.ts を開き、関数本体の先頭に以下を追加してください。
+
+追加するとこんな感じ
+
+```
+export default async function deleteQuestion({where}: DeleteQuestionInput, ctx: Ctx) {
+  ctx.session.authorize()
+  // TODO: remove once Prisma supports cascading deletes
+  await db.choice.deleteMany({where: {question: {id: where.id}}})
+  const question = await db.question.delete({where})
+  return question
+}
+```
+
+このミューテーションは、質問自体を削除する前に、質問に関連付けられた選択肢を削除するようになりました。
