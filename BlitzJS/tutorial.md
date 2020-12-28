@@ -204,3 +204,8 @@ export default async function deleteQuestion({where}: DeleteQuestionInput, ctx: 
 ```
 
 このミューテーションは、質問自体を削除する前に、質問に関連付けられた選択肢を削除するようになりました。
+
+### Question pages
+
+今の状態だと使えないので修正していこー！
+(generateで定義したモデルを使っていない)
