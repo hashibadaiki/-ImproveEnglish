@@ -209,3 +209,5 @@ export default async function deleteQuestion({where}: DeleteQuestionInput, ctx: 
 
 今の状態だと使えないので修正していこー！
 (generateで定義したモデルを使っていない)
+ 
+ QuestionListが生成されていることに注意してください。
