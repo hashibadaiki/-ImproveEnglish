@@ -211,3 +211,15 @@ export default async function deleteQuestion({where}: DeleteQuestionInput, ctx: 
 (generateで定義したモデルを使っていない)
  
  QuestionListが生成されていることに注意してください。
+
+`<a>{question.name}</a>`
+
+上で書いた通りnameというフィールドは作っていない為、このままではエラーが出ます。
+
+`question.text`　という風に置き換えてください。
+
+次に同様の理由で `new.tsx` のフォームを修正しましょう。
+
+最後に `edit.tsx` も修正します。
+
+素晴らしい！これで `blitz start` を打ち込んで `localhost3000` に行ってみてください。
