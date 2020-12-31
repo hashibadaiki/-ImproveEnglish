@@ -223,3 +223,20 @@ export default async function deleteQuestion({where}: DeleteQuestionInput, ctx: 
 最後に `edit.tsx` も修正します。
 
 素晴らしい！これで `blitz start` を打ち込んで `localhost3000` に行ってみてください。
+
+## 最小限のフォームを書く
+
+これまでのところとても順調です！
+次に行うことはフォームに実際の値を入力することです。
+現時点では全ての質問に、同じ名前が付けられています。
+QuestionForm.tsxを確認してください。
+
+div で括られた部分を下記の内容に置き換えてください。
+
+```
+<input placeholder="Name" />
+<input placeholder="Choice 1" />
+<input placeholder="Choice 2" />
+<input placeholder="Choice 3" />
+```
+
