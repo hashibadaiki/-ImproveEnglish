@@ -259,6 +259,16 @@ getQuestion.ts と getQuestions.ts ファイルを以下のように変更しま
 エディターでapp / questions / pages / questions / [questionId] .tsxを開きます。
 まず、このページを少し改善します。
 
-1. <h1> Question {question.id} </ h1>を<h1> {question.text} </ h1>に置き換えます。
+1. `<h1> Question {question.id} </ h1>を<h1> {question.text} </ h1>に置き換えます。`
 2. pre要素を削除し、前に作成した選択肢リストにコピーします。
+
+ブラウザを見てください！こんなページになってるはずです。
+
+次に、投票ボタンを追加します。私たちのliに、次のようなボタンを追加します。
+
+次に、updateChoiceミューテーション（最初に生成されたもの）をインポートし、ページにhandleVote関数を作成します。
+
+最後に、新しいボタンにその関数を呼び出すように指示します。
+
+念のために変更したコードを全て載せておきます。
 
