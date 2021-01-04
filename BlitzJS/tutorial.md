@@ -218,11 +218,50 @@ export default async function deleteQuestion({where}: DeleteQuestionInput, ctx: 
 
 `question.text`　という風に置き換えてください。
 
-
+```
+export const QuestionsList = () => {
+  const [questions] = useQuery(getQuestions, {orderBy: {id: "desc"}})
+  return (
+    <ul>
+      {questions.map((question) => (
+        <li key={question.id}>
+          <Link href="/questions/[questionId]" as={`/questions/${question.id}`}>
+            <a>{question.text}</a> 
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )
+}
+```
 
 次に同様の理由で `new.tsx` のフォームを修正しましょう。
 
+```
+// 修正前
+const question = await createQuestionMutation({data: {name: "MyName"}})
+
+// 修正後
+const question = await createQuestionMutation({
+  data: {text: "Do you love Blitz?", choices: {create: [{text: "Yes!"}]}},
+})
+```
+
 最後に `edit.tsx` も修正します。
+
+```
+// 修正前
+const updated = await updateQuestionMutation({
+  where: {id: question.id},
+  data: {text: "Do you really love Blitz?"},
+})
+
+// 修正後
+const updated = await updateQuestionMutation({
+  where: {id: question.id},
+  data: {name: "MyNewName"},
+})
+```
 
 素晴らしい！これで `blitz start` を打ち込んで `localhost3000` に行ってみてください。
 
@@ -245,6 +284,56 @@ div で括られた部分を下記の内容に置き換えてください。
 最後に全てのデータが送信されていることについて確認します。
 new.tsx を開いて置き換えます。
 
+```
+import {Head, Link, useRouter, BlitzPage} from "blitz"
+import createQuestion from "app/questions/mutations/createQuestion"
+import QuestionForm from "app/questions/components/QuestionForm"
+const NewQuestionPage: BlitzPage = () => {
+  const router = useRouter()
+  const [createQuestionMutation] = useMutation(createQuestion)
+  return (
+    <div>
+      <Head>
+        <title>New Question</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <h1>Create New Question </h1>
+        <QuestionForm
+          initialValues={{}}
+          onSubmit={async (event) => {
+            try {
+              const question = await createQuestionMutation({
+                data: {
+                  text: event.target[0].value,
+                  choices: {
+                    create: [
+                      {text: event.target[1].value},
+                      {text: event.target[2].value},
+                      {text: event.target[3].value},
+                    ],
+                  },
+                },
+              })
+              alert("Success!" + JSON.stringify(question))
+              router.push("/questions/[questionId]", `/questions/${question.id}`)
+            } catch (error) {
+              alert("Error creating question " + JSON.stringify(error, null, 2))
+            }
+          }}
+        />
+        <p>
+          <Link href="/questions">
+            <a>Questions</a>
+          </Link>
+        </p>
+      </main>
+    </div>
+  )
+}
+export default NewQuestionPage
+```
+
 ## 質問のリスト
 
 一息つく時間です。ブラウザの http://localhost:3000/questions に戻って、あなたが作成したすべての問題を見てください。
@@ -253,8 +342,51 @@ new.tsx を開いて置き換えます。
 Prismaでは、ネストされたリレーションに対してクエリを実行したいことをクライアントに手動で知らせる必要があります。
 getQuestion.ts と getQuestions.ts ファイルを以下のように変更します。
 
+```
+// app/questions/queries/getQuestion.ts
+export default async function getQuestion({where /* include */}: GetQuestionInput, ctx: Ctx) {
+  ctx.session.authorize()
+  const question = await db.question.findFirst({where, include: {choices: true}})
+  if (!question) throw new NotFoundError()
+  return question
+}
+```
+
+```
+// app/questions/queries/getQuestions.ts
+type GetQuestionsInput = Pick<FindManyQuestionArgs, "where" | "orderBy" | "cursor" | "take" | "skip">
+export default async function getQuestions(
+  {where, orderBy, cursor, take, skip}: GetQuestionsInput,
+  ctx: Ctx,
+) {
+  ctx.session.authorize()
+  const questions = await db.question.findMany({
+    where,
+    orderBy,
+    cursor,
+    take,
+    skip,
+    include: {choices: true},
+  })
+  const count = await db.question.count()
+  const hasMore = typeof take === "number" ? skip + take < count : false
+  const nextPage = hasMore ? { take, skip: skip + take! } : null
+  return questions
+}
+```
+
 次に、エディターのメインの質問ページに戻ります。
 各質問の選択肢を一覧表示できます。 QuestionsListのリンクの下に次のコードを追加します。
+
+```
+<ul>
+  {question.choices.map((choice) => (
+    <li key={choice.id}>
+      {choice.text} - {choice.votes} votes
+    </li>
+  ))}
+</ul>
+```
 
 マジック！もう1つ、これらの質問に投票してもらいましょう。
 
@@ -268,11 +400,92 @@ getQuestion.ts と getQuestions.ts ファイルを以下のように変更しま
 
 次に、投票ボタンを追加します。私たちのliに、次のようなボタンを追加します。
 
+```
+<li key={choice.id}>
+  {choice.text} - {choice.votes} votes
+  <button>Vote</button>
+</li>
+```
+
 次に、updateChoiceミューテーション（最初に生成されたもの）をインポートし、ページにhandleVote関数を作成します。
 
 最後に、新しいボタンにその関数を呼び出すように指示します。
 
 念のために変更したコードを全て載せておきます。
+
+```
+import React, {Suspense} from "react"
+import {Head, Link, useRouter, useQuery, useParam, BlitzPage} from "blitz"
+import getQuestion from "app/questions/queries/getQuestion"
+import deleteQuestion from "app/questions/mutations/deleteQuestion"
+import updateChoice from "app/choices/mutations/updateChoice" 
+export const Question = () => {
+  const router = useRouter()
+  const questionId = useParam("questionId", "number")
+  const [question, {refetch}] = useQuery(getQuestion, {where: {id: questionId}})
+  const [deleteQuestionMutation] = useMutation(deleteQuestion)
+  const [updateChoiceMutation] = useMutation(updateChoice) 
+  const handleVote = async (id, votes) => {
+    try {
+      const updated = await updateChoiceMutation({
+        where: {id},
+        data: {votes: votes + 1},
+      })
+      refetch()
+    } catch (error) {
+      alert("Error creating question " + JSON.stringify(error, null, 2))
+    }
+  }
+  return (
+    <div>
+      <h1>{question.text}</h1>
+      <ul>
+        {question.choices.map((choice) => (
+          <li key={choice.id}>
+            {choice.text} - {choice.votes} votes
+            <button onClick={() => handleVote(choice.id, choice.votes)}>Vote</button>
+          </li>
+        ))}
+      </ul>
+      <Link href="/questions/[questionId]/edit" as={`/questions/${question.id}/edit`}>
+        <a>Edit</a>
+      </Link>
+      <button
+        type="button"
+        onClick={async () => {
+          if (window.confirm("This will be deleted")) {
+            await deleteQuestionMutation({where: {id: question.id}})
+            router.push("/questions")
+          }
+        }}
+      >
+        Delete
+      </button>
+    </div>
+  )
+}
+const ShowQuestionPage: BlitzPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Question</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <p>
+          <Link href="/questions">
+            <a>Questions</a>
+          </Link>
+        </p>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Question />
+        </Suspense>
+      </main>
+    </div>
+  )
+}
+export default ShowQuestionPage
+```
 
 ## 結論
 
