@@ -72,10 +72,31 @@ GitHubプロジェクトボードを使用して、すべての問題とPRを追
  4. package serverを立ち上げます。これはpackage開発や、その他の開発でマストです
  5. testを走らせます
 
- ## Blitzの開発バージョンのテスト
+## Blitzの開発バージョンのテスト
 
 > info   
 > 現在、Blitzのローカル開発版をテストするには、blitz/examples/フォルダ内でのみアプリをテストすることができます。そこでは、blitzの依存関係が自動的にローカル開発版を使用します。  
 > 私たちは主に、authとstoreのサンプルアプリを使用しています。開発テストやblitzの統合テストに使用しています。また、blitzフォルダ内でyarn devを同時に実行していることを確認する必要があります。
 
 リポジトリ外のアプリで使用する場合、yalcは機能するはずですが、まだテストされていません。 yalcの使い方がわかれば、このページに設定方法を説明したPRをしてください！
+
+## forkを同期する
+
+```
+git remote add upstream git@github.com:blitz-js/blitz.git
+./scripts/fetchRemote.sh
+git merge upstream/canary
+```
+
+## Blitz CLIをリンクする(任意)
+
+CLIを使用すると、どこでもlocal binary としてtestを使用できます。
+
+```
+yarn link-cli
+yarn link blitz
+// `yarn unlink blitz`
+// `yarn unlink-cli`  will unlink
+```
+
+## 
