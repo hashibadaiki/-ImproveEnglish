@@ -99,4 +99,7 @@ yarn link blitz
 // `yarn unlink-cli`  will unlink
 ```
 
-## 
+## Blitz の package を開発する
+
+1. package dir に移動する。
+2. テストを走らせる
