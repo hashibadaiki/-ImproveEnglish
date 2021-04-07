@@ -103,3 +103,9 @@ yarn link blitz
 
 1. package dir に移動する。
 2. テストを走らせる
+
+## Blitz の例題を開発する
+
+1. examples dirに移動する
+2. examples の README に従う
+
