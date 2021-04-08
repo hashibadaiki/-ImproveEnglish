@@ -109,3 +109,8 @@ yarn link blitz
 1. examples dirに移動する
 2. examples の README に従う
 
+## トラブルシューティング
+
+ここに記載する必要のある問題が発生した場合は、PRを送信してね！
+
+## 
