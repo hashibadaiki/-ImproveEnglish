@@ -1,5 +1,7 @@
 [翻訳元](https://blitzjs.com/docs/contributing)
 
+翻訳途中でページ修正されていそう
+
 # How to Contribute
 
 私たちは、あなたがBlitzの支援に興味を持ってくれたことをとても嬉しく思っています。オープンソースの経験がない方でも、お気軽にご相談ください!
@@ -113,4 +115,7 @@ yarn link blitz
 
 ここに記載する必要のある問題が発生した場合は、PRを送信してね！
 
-## 
+### windows subSystem for linux(WSL)
+
+yarnを実装しているときのnode-ptyエラーは、node-pty depandencies をインストールして修正してください。
+
