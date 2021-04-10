@@ -119,3 +119,16 @@ yarn link blitz
 
 yarnを実装しているときのnode-ptyエラーは、node-pty depandencies をインストールして修正してください。
 
+### yarn policies error
+
+以下のコマンドが出たら yarn 1.19.1 に関することです
+
+`An unexpected error occurred: "expected workspace package to exist for \"@wessberg/rollup-plugin-ts\"`
+
+その場合はこれを打ってください
+
+`yarn policies set-version 1.19.1`
+
+### Git errors
+
+コミットできないことがありますか？yarn: command not found や stdin is not a tty などのエラーが出ていませんか？それはおそらくHuskyのエラーです。トラブルシューティングガイドを確認してみてください。
