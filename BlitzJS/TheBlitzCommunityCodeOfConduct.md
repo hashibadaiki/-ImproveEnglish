@@ -56,6 +56,13 @@
 
 このコミュニティのコアメンバーで話し合い決定します。決定者と違反者が話し合うことはできません。
 
-## 
+## 質問やフィードバックについて
 
-## 
+この行動規約に対して、質問やフィードバックがあるなら連絡してね！
+
+## Thanks for Inspiration
+
+(参考にしたサイト)
+
+- [Hood.ie](http://hood.ie/code-of-conduct/)
+- [WeAllJS](https://wealljs.org/code-of-conduct)
