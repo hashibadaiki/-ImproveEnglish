@@ -8,4 +8,23 @@
 
 ## 発音記号学習
 
+[一覧](https://english-club.jp/blog/english-phonetic-symbol/)
+
+[youtube](https://www.youtube.com/watch?v=9FGRAzFHygQ)
+
 - 7/1
+
+発音は母音と子音に分かれている
+
+ここまで  
+https://youtu.be/Httl0PoSclE?t=193
+
+
+```
+これを完成させていく
+
+^　日本語の「ア」に近い発音。ただし、日本語の「ア」よりも若干口を狭く開き、短く喉の奥の方で「アッ」と発音する。
+ae 「あ」「え」を同時に
+
+
+```
